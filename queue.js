@@ -30,6 +30,7 @@ function Queue() {
       console.error("queue is empty");
       return;
     }
+
     const newArray = [];
 
     //store last item to be returned later
