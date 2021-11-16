@@ -1,21 +1,27 @@
-function queue() {
+function Queue() {
   //Challenge no use of array methods
   let queue = [];
 
   function enqueue(newItem) {
+    // easy way
     // queue = [newItem, ...queue];
 
+    // hard way
     const newArray = [];
 
     for (let i = 0; i <= queue.length; i++) {
+      //insert newItem into the beginning of the first array
       if (i === 0) {
         newArray[i] = newItem;
         continue;
       }
 
       //copy queue but with all items shifted up one.
+      //newArray["newItem"(0), "a"(1), "b"(2), "c"(3)]
+      //queue["a"(0), "b"(1), "c"(2)];
       newArray[i] = queue[i - 1];
     }
+
     queue = newArray;
   }
 
@@ -36,7 +42,6 @@ function queue() {
 
     //create new queue without one less item in it.
     queue = newArray;
-
     return dequeuedItem;
   }
 
@@ -51,7 +56,7 @@ function queue() {
   };
 }
 
-const myQueue = queue();
+const myQueue = Queue();
 
 myQueue.print();
 myQueue.dequeue();
